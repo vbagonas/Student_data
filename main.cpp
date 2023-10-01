@@ -3,6 +3,7 @@
 #include <vector>
 #include <limits>
 #include <algorithm>
+#include <random>
 using namespace std;
 
  struct Studentas {
@@ -26,6 +27,12 @@ double Mediana(const vector<int>& pazymiai) {
         return rus_pazym[size / 2];
     };
 }
+double atsitiktinaspaz(double min, double max) {
+    static random_device rd;
+    static mt19937 gen(rd());
+    uniform_real_distribution<double> distribution(min, max);
+    return distribution(gen);
+}
 int main()
 {
     vector<Studentas> studentai;
@@ -39,15 +46,26 @@ int main()
         cin>>studentas.vardas;
         cout<<"Studentas nr."<<i+1<<" - Ivesk pavarde: ";
         cin>>studentas.pavarde;
-        cout<<"Ivesk namu darbu ivertinimus (paspausk bet kokia raide, kad sustabdyti): ";
         int pazym;
-        while(cin>>pazym){
-            studentas.paz.push_back(pazym);
+        string pasirinkimas;
+        cout<<"Ar norite, kad pazymiai butu generuojami atsitiktinai? (taip/ne)"<<endl;
+        cin>>pasirinkimas;
+        if (pasirinkimas == "taip"){
+            for (int j = 0; j < 5; ++j) {
+                int pazym = atsitiktinaspaz(1, 10);
+                studentas.paz.push_back(pazym);
+            }
+            studentas.egzam = atsitiktinaspaz(1, 10);
+        } else if (pasirinkimas == "ne") {
+            cout << "Iveskite namu darbu pazymi (paspauskite raide ir enter, kad sustabdyti: ";
+            while (cin >> pazym) {
+                studentas.paz.push_back(pazym);
+            }
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout<<"ivesk egzamino pazymi: ";
+            cin>>studentas.egzam;
         }
-        cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        cout<<"ivesk egzamino pazymi: ";
-        cin>>studentas.egzam;
         double nd_vid = 0.0;
         double nd_med = 0.0;
         for (int pazym : studentas.paz) {
