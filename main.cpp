@@ -1,7 +1,6 @@
 #include <iostream>
 #include <iomanip>
 #include <vector>
-#include <limits>
 #include <algorithm>
 #include <random>
 #include <fstream>
@@ -26,10 +25,13 @@ double Mediana(const vector<int>& pazymiai) {
         return (rus_pazym[size / 2 - 1] + rus_pazym[size / 2]) / 2.0;
     } else {
         return rus_pazym[size / 2];
-    };
+    }
+};
+bool vardlyg(const Studentas& a, const Studentas& b) {
+    return a.vardas < b.vardas;
 }
 int main() {
-    ifstream file("kursiokai2.txt");
+    ifstream file("student_data.txt");
     if(!file.is_open()){
         cerr<<"Nepavyko atidaryti failo."<<endl;
         return 1;
@@ -90,8 +92,8 @@ int main() {
         ndMed = Mediana(studentas.paz);
         studentas.vidurkis2 = 0.4 * ndMed + 0.6 * studentas.egzam;
     }
-
-    cout<<"Vardas\tPavarde\tVidurkis"<<endl;
+    sort(studentai.begin(), studentai.end(), vardlyg);
+    cout<<"Vardas\tPavarde\tVidurkis\tMediana"<<endl;
     for(const Studentas& studentas : studentai){
         cout<<studentas.vardas<<"\t"<<studentas.pavarde<<"\t"<<studentas.vidurkis<<"\t"<<studentas.vidurkis2<<endl;
     }
