@@ -4,6 +4,9 @@
 #include <limits>
 #include <algorithm>
 #include <random>
+#include <fstream>
+#include <sstream>
+
 using namespace std;
 
  struct Studentas {
@@ -20,75 +23,80 @@ double Mediana(const vector<int>& pazymiai) {
 
     size_t size = rus_pazym.size();
     if (size % 2 == 0) {
-        // If even number of elements, return the average of the middle two
         return (rus_pazym[size / 2 - 1] + rus_pazym[size / 2]) / 2.0;
     } else {
-        // If odd number of elements, return the middle element
         return rus_pazym[size / 2];
     };
 }
-double atsitiktinaspaz(double min, double max) {
-    static random_device rd;
-    static mt19937 gen(rd());
-    uniform_real_distribution<double> distribution(min, max);
-    return distribution(gen);
-}
-int main()
-{
+int main() {
+    ifstream file("kursiokai2.txt");
+    if(!file.is_open()){
+        cerr<<"Nepavyko atidaryti failo."<<endl;
+        return 1;
+    }
+    string eile;
     vector<Studentas> studentai;
-    int stud_sk;
-    cout<<"iveskite studentu skaiciu: ";
-    cin>>stud_sk;
+    bool skaitytind = false;
+    int skND = 0;
 
-    for(int i=0; i<stud_sk; i++){
+    if (getline(file, eile)) {
+        istringstream titleLine(eile);
+        string stulpav;
+        while (titleLine >> stulpav) {
+            if (stulpav == "Vardas") {
+                continue;
+            } else if (stulpav == "Pavarde") {
+                continue;
+            } else if (stulpav == "Egz.") {
+                skaitytind = false;
+                break;
+            } else {
+                skaitytind = true;
+                skND++;
+            }
+        }
+    } else {
+        cerr << "Error: Empty input file." << endl;
+        return 1;
+    }
+
+    while(getline(file, eile)){
+        istringstream iss(eile);
         Studentas studentas;
-        cout<<"Studentas nr."<<i+1<<" - Ivesk varda: ";
-        cin>>studentas.vardas;
-        cout<<"Studentas nr."<<i+1<<" - Ivesk pavarde: ";
-        cin>>studentas.pavarde;
-        int pazym;
-        string pasirinkimas;
-        cout<<"Ar norite, kad pazymiai butu generuojami atsitiktinai? (taip/ne)"<<endl;
-        cin>>pasirinkimas;
-        if (pasirinkimas == "taip"){
-            for (int j = 0; j < 5; ++j) {
-                int pazym = atsitiktinaspaz(1, 10);
-                studentas.paz.push_back(pazym);
+        iss>>studentas.vardas>>studentas.pavarde;
+        int balas;
+
+        for(int i = 0; i<skND; i++) {
+            if(iss>>balas) {
+                studentas.paz.push_back(balas);
+            } else {
+                cerr << "Klaida. Nera ND pazymio" << endl;
             }
-            studentas.egzam = atsitiktinaspaz(1, 10);
-        } else if (pasirinkimas == "ne") {
-            cout << "Iveskite namu darbu pazymi (paspauskite raide ir enter, kad sustabdyti: ";
-            while (cin >> pazym) {
-                studentas.paz.push_back(pazym);
-            }
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cout<<"ivesk egzamino pazymi: ";
-            cin>>studentas.egzam;
         }
-        double nd_vid = 0.0;
-        double nd_med = 0.0;
-        for (int pazym : studentas.paz) {
-            nd_vid += pazym;
+        if (iss>>studentas.egzam) {
+            studentai.push_back(studentas);
+        } else {
+            cerr << "Klaida. Nera egzamino pazymio" << endl;
         }
-        if(!studentas.paz.empty()){
-                nd_vid /= studentas.paz.size();
-            }
-        nd_med = Mediana(studentas.paz);
-        studentas.vidurkis = 0.4 * nd_vid + 0.6 * studentas.egzam;
-        studentas.vidurkis2 = 0.4 * nd_med + 0.6 * studentas.egzam;
-        studentai.push_back(studentas);
     }
 
-    cout<<setw(15)<<left<<"Vardas"<<setw(15)<<"Pavarde"<<setw(20)<<"Galutinis (Vid.)"<<"Galutinis (Med.)"<<endl;
-    cout<<"------------------------------------------------------------------"<<endl;
-    for (const Studentas& studentas : studentai) {
-        cout<<setw(15)<<left<<studentas.vardas<<setw(15)<<studentas.pavarde<<setw(20)<<fixed<<setprecision(2)<<studentas.vidurkis<<fixed<<setprecision(2)<<studentas.vidurkis2<<endl;
+    for (Studentas& studentas : studentai) {
+        double ndSuma = 0, ndMed = 0;
+        for (int balas : studentas.paz) {
+            ndSuma += balas;
+        }
+        double ndVid = ndSuma / skND;
+        studentas.vidurkis = 0.4 * ndVid + 0.6 * studentas.egzam;
+        ndMed = Mediana(studentas.paz);
+        studentas.vidurkis2 = 0.4 * ndMed + 0.6 * studentas.egzam;
     }
 
+    cout<<"Vardas\tPavarde\tVidurkis"<<endl;
+    for(const Studentas& studentas : studentai){
+        cout<<studentas.vardas<<"\t"<<studentas.pavarde<<"\t"<<studentas.vidurkis<<"\t"<<studentas.vidurkis2<<endl;
+    }
     return 0;
 }
-
 
 
 
