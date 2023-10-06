@@ -93,9 +93,10 @@ int main() {
         studentas.vidurkis2 = 0.4 * ndMed + 0.6 * studentas.egzam;
     }
     sort(studentai.begin(), studentai.end(), vardlyg);
-    cout<<"Vardas\tPavarde\tVidurkis\tMediana"<<endl;
+    cout<<setw(15)<<left<<"Vardas"<<setw(15)<<"Pavarde"<<setw(20)<<"Galutinis(Vid.)"<<"Galutinis(Med.)"<<endl;
+    cout<<"------------------------------------------------------------------"<<endl;
     for(const Studentas& studentas : studentai){
-        cout<<studentas.vardas<<"\t"<<studentas.pavarde<<"\t"<<studentas.vidurkis<<"\t"<<studentas.vidurkis2<<endl;
+          cout<<setw(15)<<left<<studentas.vardas<<setw(15)<<studentas.pavarde<<setw(20)<<fixed<<setprecision(2)<<studentas.vidurkis<<fixed<<setprecision(2)<<studentas.vidurkis2<<endl;
     }
     return 0;
 }
