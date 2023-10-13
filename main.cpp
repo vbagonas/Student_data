@@ -2,11 +2,12 @@
 #include "mylib.cpp"
 
 int main() {
-    ifstream file("kursiokai.txt");
-    if(!file.is_open()){
-        cerr<<"Nepavyko atidaryti failo."<<endl;
-        return 1;
-    }
+    try {
+        ifstream file("kursiokai.txt");
+        if(!file.is_open()){
+            cerr<<"Nepavyko atidaryti failo."<<endl;
+            return 1;
+        }
     string eile;
     vector<Studentas> studentai;
     bool skaitytind = false;
@@ -68,6 +69,10 @@ int main() {
     cout<<"------------------------------------------------------------------"<<endl;
     for(const Studentas& studentas : studentai){
           cout<<setw(15)<<left<<studentas.vardas<<setw(15)<<studentas.pavarde<<setw(20)<<fixed<<setprecision(2)<<studentas.vidurkis<<fixed<<setprecision(2)<<studentas.vidurkis2<<endl;
+    }
+    } catch (const std::exception& e) {
+        cerr << "An error occurred: " << e.what() << endl;
+        return 1;
     }
     return 0;
 }
