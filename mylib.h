@@ -49,13 +49,17 @@ struct Studentas {
         int egzam;
         double vidurkis;
         double mediana;
+        double balasvid;
+        double balasmed;
     };
 
 int ivesk_skaiciu(int x1, int x2);
 void duomenu_ivedimas (Studentas &stud, int i, int &n, int &sum, int m);
-void Skaityti(vector <Studentas> &studentai, int &m);
+void Skaityti(vector <Studentas> &studentai, int &m, string failas);
 void VidurkisIrMediana (Studentas &stud, int &n, int &sum, vector <Studentas> &studentai);
 bool vardlyg(const Studentas& a, const Studentas& b);
 int atsitiktinaspaz(int min, int max);
 void file_gen(int &m, int &n);
+void Rusiuoti(vector <Studentas> &studentai, vector <Studentas> &vargsiukai, vector <Studentas> &kietiakai);
+void isvedimas_i_faila(vector <Studentas> studentai, string pavadinimas);
 #endif // MYLIB_H_INCLUDED

@@ -65,9 +65,9 @@ void duomenu_ivedimas (Studentas &stud, int i, int &n, int &sum, int m)
         cin>>stud.egzam;
     }
 }
-void Skaityti(vector <Studentas> &studentai, int &m)
+void Skaityti(vector <Studentas> &studentai, int &m, string failas)
 {
-    ifstream file("studentai100000.txt");
+    ifstream file(failas);
     string ignor, eile;
     Studentas stud;
     int pazym, sum = 0, n = 0;
@@ -131,10 +131,12 @@ void VidurkisIrMediana(Studentas &stud, int &n, int &sum, vector <Studentas> &st
     {
     stud.mediana = stud.paz[dyd / 2];
     }
+    stud.balasmed = static_cast<float>(stud.mediana*0.4 + stud.egzam*0.6);
+    stud.balasvid = static_cast<float>(stud.vidurkis*0.4 + stud.egzam*0.6);
     studentai.push_back(stud);
     stud.paz.clear();
     sum = 0;
-    n = 0;
+    n++;
 }
 bool vardlyg(const Studentas &a, const Studentas &b) {
     return a.vardas < b.vardas;
@@ -170,6 +172,34 @@ void file_gen(int &m, int &n)
             fr<<setw(5)<<atsitiktinaspaz(1, 10);
         }
         fr<<setw(4)<<right<<atsitiktinaspaz(1, 10)<<endl;
+    }
+    fr.close();
+}
+void Rusiuoti(vector <Studentas> &studentai, vector <Studentas> &vargsiukai, vector <Studentas> &kietiakai)
+{
+    for(auto &a: studentai)
+    {
+        if (a.balasvid < 5)
+        {
+            vargsiukai.push_back(a);
+        }
+        else
+        {
+            kietiakai.push_back(a);
+        }
+    }
+}
+void isvedimas_i_faila(vector <Studentas> studentai, string pavadinimas)
+{
+    ofstream fr("Rezultatai" + pavadinimas + ".txt");
+    fr << setw(15) << left << "Vardas" << setw(16) << right << "Pavarde" << setw(20) << right << "Galutinis (Vid.)";
+    fr << setw(20) << right << "Galutinis (Med.)" << endl;
+
+    for (auto &a: studentai)
+    {
+        fr << setw(15) << left << a.vardas << setw(16) << right << a.pavarde;
+        fr << setw(20) << right << setprecision(2) << fixed << a.balasvid;
+        fr << setw(20) << right << setprecision(2) << fixed << a.balasmed << endl;
     }
     fr.close();
 }
