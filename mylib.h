@@ -50,7 +50,7 @@ struct Studentas {
 
 int ivesk_skaiciu(int x1, int x2);
 void duomenu_ivedimas (Studentas &stud, int i, int &n, int &sum, int m);
-void Skaityti(vector <Studentas> studentai, int &m);
+void Skaityti(vector <Studentas> &studentai, int &m);
 void VidurkisIrMediana (Studentas &stud, int &n, int &sum, vector <Studentas> &studentai);
 bool vardlyg(const Studentas& a, const Studentas& b);
 double atsitiktinaspaz(double min, double max);

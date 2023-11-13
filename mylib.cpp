@@ -65,9 +65,9 @@ void duomenu_ivedimas (Studentas &stud, int i, int &n, int &sum, int m)
         cin>>stud.egzam;
     }
 }
-/*void Skaityti(vector <Studentas> studentai, int &m)
+void Skaityti(vector <Studentas> &studentai, int &m)
 {
-    ifstream file("student_data.txt");
+    ifstream file("studentai100000.txt");
     string ignor, eile;
     Studentas stud;
     int pazym, sum = 0, n = 0;
@@ -101,26 +101,24 @@ void duomenu_ivedimas (Studentas &stud, int i, int &n, int &sum, int m)
     while (getline(file,eile))
     {
         istringstream iss(eile);
-        iss>>studentai.vardas>>studentai.pavarde;
+        iss>>stud.vardas>>stud.pavarde;
         int balas;
-        for(int i = 0; i < skND, i++)
+        for(int i = 0; i < skND; i++)
         {
             if(iss>>balas){
-                studentai.paz.push_back(balas);
+                stud.paz.push_back(balas);
                 sum += balas;
+                n++;
             } else {
                 cerr<<"Error: Empty input file." << endl;
             }
         }
-        if(iss>>studentai.egzam){
-            studentai.push_back(studentas);
-        } else {
-            cerr << "Klaida. Nera egzamino pazymio" << endl;
-        }
+        iss>>stud.egzam;
         VidurkisIrMediana(stud, n, sum, studentai);
+        m++;
         }
     file.close();
-}*/
+}
 void VidurkisIrMediana(Studentas &stud, int &n, int &sum, vector <Studentas> &studentai) {
     stud.vidurkis = static_cast<float>(sum)/n;
         //----------------------skaiciuojam mediana---------------------------
@@ -140,7 +138,7 @@ void VidurkisIrMediana(Studentas &stud, int &n, int &sum, vector <Studentas> &st
     sum = 0;
     n = 0;
 }
-bool vardlyg(const Studentas& a, const Studentas& b) {
+bool vardlyg(const Studentas &a, const Studentas &b) {
     return a.vardas < b.vardas;
 }
 double atsitiktinaspaz(double min, double max)
