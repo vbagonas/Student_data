@@ -121,7 +121,6 @@ void Skaityti(vector <Studentas> &studentai, int &m)
 }
 void VidurkisIrMediana(Studentas &stud, int &n, int &sum, vector <Studentas> &studentai) {
     stud.vidurkis = static_cast<float>(sum)/n;
-        //----------------------skaiciuojam mediana---------------------------
     sort(stud.paz.begin(), stud.paz.end());
     int dyd = stud.paz.size();
     if (dyd % 2 == 0)
@@ -132,7 +131,6 @@ void VidurkisIrMediana(Studentas &stud, int &n, int &sum, vector <Studentas> &st
     {
     stud.mediana = stud.paz[dyd / 2];
     }
-    //---------------------------------------------------------------------
     studentai.push_back(stud);
     stud.paz.clear();
     sum = 0;
@@ -141,12 +139,39 @@ void VidurkisIrMediana(Studentas &stud, int &n, int &sum, vector <Studentas> &st
 bool vardlyg(const Studentas &a, const Studentas &b) {
     return a.vardas < b.vardas;
 }
-double atsitiktinaspaz(double min, double max)
+int atsitiktinaspaz(int min, int max)
 {
     static random_device rd;
     static mt19937 gen(rd());
-    uniform_real_distribution<double> distribution(min, max);
+    uniform_int_distribution<int> distribution(min, max);
     return distribution(gen);
+}
+void file_gen(int &m, int &n)
+{
+    ofstream fr ("Studentai" + to_string(m) + ".txt");
+    Studentas stud;
+    int sum;
+
+    cout<<"Kiek pazymiu generuoti kiekvienam studentui? "<<endl;
+    cin>>n;
+    fr<<setw(15)<<left<<"Vardas"<<setw(16)<<left<<"Pavarde";
+    for(int i = 0; i<n; i++)
+    {
+        fr<<setw(5)<<"ND" + to_string(i+1);
+    }
+    fr<<setw(7)<<right<<"Egz."<<endl;
+    for(int i=0; i<m; i++)
+    {
+        stud.vardas = "Vardas" + to_string(i+1);
+        stud.pavarde = "Pavarde" + to_string(i+1);
+        fr<<setw(15)<<left<<stud.vardas<<setw(16)<<left<<stud.pavarde;
+        for(int i=0; i<n; i++)
+        {
+            fr<<setw(5)<<atsitiktinaspaz(1, 10);
+        }
+        fr<<setw(4)<<right<<atsitiktinaspaz(1, 10)<<endl;
+    }
+    fr.close();
 }
 
 

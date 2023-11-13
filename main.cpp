@@ -8,9 +8,9 @@ int main ()
     int sum = 0;
     string t;
 
-    cout<<"Kaip ivesite duomenis? (1-ranka, 2-is failo)"<<endl;
+    cout<<"Kaip ivesite duomenis? (1-ranka, 2-is failo, 3-generuoti faila)"<<endl;
 
-    skaicius = ivesk_skaiciu(1, 2);
+    skaicius = ivesk_skaiciu(1, 3);
 
     if (skaicius == 1)
     {
@@ -22,9 +22,15 @@ int main ()
             VidurkisIrMediana(stud, n, sum, studentai);
         }
     }
-    else
+    else if(skaicius == 2)
     {
         Skaityti(studentai, m);
+    }
+    else
+    {
+        cout<<"kiek studentu kurse"<<endl;
+        cin>>m;
+        file_gen(m, n);
     }
 
     sort(studentai.begin(), studentai.end(), vardlyg);

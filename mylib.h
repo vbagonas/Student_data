@@ -11,6 +11,7 @@
 #include <fstream>
 #include <limits>
 #include <random>
+#include <chrono>
 
 using std::cout;
 using std::cin;
@@ -35,8 +36,10 @@ using std::numeric_limits;
 using std::streamsize;
 using std::random_device;
 using std::mt19937;
-using std::uniform_real_distribution;
+using std::uniform_int_distribution;
 using std::istringstream;
+using std::to_string;
+
 
 
 struct Studentas {
@@ -53,5 +56,6 @@ void duomenu_ivedimas (Studentas &stud, int i, int &n, int &sum, int m);
 void Skaityti(vector <Studentas> &studentai, int &m);
 void VidurkisIrMediana (Studentas &stud, int &n, int &sum, vector <Studentas> &studentai);
 bool vardlyg(const Studentas& a, const Studentas& b);
-double atsitiktinaspaz(double min, double max);
+int atsitiktinaspaz(int min, int max);
+void file_gen(int &m, int &n);
 #endif // MYLIB_H_INCLUDED
