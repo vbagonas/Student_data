@@ -42,10 +42,9 @@ void duomenu_ivedimas (Studentas &stud, int i, int &n, int &sum, int m)
     int pazym;
     if(skaic == 1)
     {
-        int kiek;
         cout<<"iveskite pazymiu skaiciu: "<<endl;
-        cin>>kiek;
-        for (int j = 0; j < kiek; ++j) {
+        cin>>n;
+        for (int j = 0; j < n; ++j) {
             int pazym = atsitiktinaspaz(1, 10);
             stud.paz.push_back(pazym);
             sum += pazym;
@@ -58,6 +57,7 @@ void duomenu_ivedimas (Studentas &stud, int i, int &n, int &sum, int m)
         while (cin >> pazym) {
             stud.paz.push_back(pazym);
             sum += pazym;
+            n++;
         }
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
