@@ -39,11 +39,31 @@ int main ()
         string failas;
         cout<<"Koks failo pavadinimas"<<endl;
         cin>>failas;
+
+        auto start = std::chrono::high_resolution_clock::now();
+
         Skaityti(studentai, m, failas);
+
+        auto end = std::chrono::high_resolution_clock::now();
+        std::chrono::duration<double> diff = end-start;
+        cout << m << " studentu failo skaitymas uztruko: "<< diff.count() << " s;" << endl;
+
         sort(studentai.begin(), studentai.end(), vardlyg);
+
+        start = std::chrono::high_resolution_clock::now();
+
         Rusiuoti(studentai, vargsiukai, kietiakai);
+
+        end = std::chrono::high_resolution_clock::now();
+        std::chrono::duration<double> diff1 = end-start;
+        cout << m << " studentu failo rusiavimas uztruko: "<< diff.count() << " s;" << endl;
+
+        start = std::chrono::high_resolution_clock::now();
         isvedimas_i_faila(vargsiukai, "Vargsiukai");
         isvedimas_i_faila(kietiakai, "Kietiakai");
+        end = std::chrono::high_resolution_clock::now();
+        std::chrono::duration<double> diff2 = end-start;
+        cout << m << " studentu failu isvedimas uztruko: "<< diff.count() << " s;" << endl;
     }
     else
     {
