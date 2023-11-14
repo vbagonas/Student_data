@@ -147,13 +147,16 @@ bool vardlyg(const Studentas &a, const Studentas &b) {
 bool pavardlyg(const Studentas &a, const Studentas &b) {
     return a.pavarde < b.pavarde;
 }
-bool ballyg(const Studentas &a, const Studentas &b) {
+bool bal_vid_lyg(const Studentas &a, const Studentas &b) {
     return a.balasvid < b.balasvid;
+}
+bool bal_med_lyg(const Studentas &a, const Studentas &b) {
+    return a.balasmed < b.balasmed;
 }
 void Rusiavimas2(vector <Studentas> &studentai)
 {
     int pasirinkimas;
-    cout<<"Pagal kuri parametra rusiuoti studentus? (1-Varda, 2-Pavarde, 3-Vidurki): "<<endl;
+    cout<<"Pagal kuri parametra rusiuoti studentus? (1-Varda, 2-Pavarde, 3-Vidurki, 4-Mediana): "<<endl;
     cin>>pasirinkimas;
     if(pasirinkimas == 1)
     {
@@ -163,9 +166,13 @@ void Rusiavimas2(vector <Studentas> &studentai)
     {
         sort(studentai.begin(), studentai.end(), pavardlyg);
     }
+    else if(pasirinkimas == 3)
+    {
+        sort(studentai.begin(), studentai.end(), bal_vid_lyg);
+    }
     else
     {
-        sort(studentai.begin(), studentai.end(), ballyg);
+        sort(studentai.begin(), studentai.end(), bal_med_lyg);
     }
 }
 int atsitiktinaspaz(int min, int max)

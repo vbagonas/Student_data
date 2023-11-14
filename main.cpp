@@ -37,7 +37,7 @@ int main ()
     else if(skaicius == 2)
     {
         string failas;
-        cout<<"Koks failo pavadinimas"<<endl;
+        cout<<"Koks failo pavadinimas?"<<endl;
         cin>>failas;
 
         auto start = std::chrono::high_resolution_clock::now();
