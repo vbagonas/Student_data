@@ -93,6 +93,7 @@ void Skaityti(vector <Studentas> &studentai, int &m, string failas)
             } else {
                 skaitytind = true;
                 skND++;
+
             }
         }
     } else {
@@ -109,7 +110,9 @@ void Skaityti(vector <Studentas> &studentai, int &m, string failas)
                 stud.paz.push_back(balas);
                 sum += balas;
                 n++;
-            } else {
+            }
+            else
+            {
                 cerr<<"Error: Empty input file." << endl;
             }
         }
@@ -136,10 +139,34 @@ void VidurkisIrMediana(Studentas &stud, int &n, int &sum, vector <Studentas> &st
     studentai.push_back(stud);
     stud.paz.clear();
     sum = 0;
-    n++;
+    n=0;
 }
 bool vardlyg(const Studentas &a, const Studentas &b) {
     return a.vardas < b.vardas;
+}
+bool pavardlyg(const Studentas &a, const Studentas &b) {
+    return a.pavarde < b.pavarde;
+}
+bool ballyg(const Studentas &a, const Studentas &b) {
+    return a.balasvid < b.balasvid;
+}
+void Rusiavimas2(vector <Studentas> &studentai)
+{
+    int pasirinkimas;
+    cout<<"Pagal kuri parametra rusiuoti studentus? (1-Varda, 2-Pavarde, 3-Vidurki): "<<endl;
+    cin>>pasirinkimas;
+    if(pasirinkimas == 1)
+    {
+        sort(studentai.begin(), studentai.end(), vardlyg);
+    }
+    else if(pasirinkimas == 2)
+    {
+        sort(studentai.begin(), studentai.end(), pavardlyg);
+    }
+    else
+    {
+        sort(studentai.begin(), studentai.end(), ballyg);
+    }
 }
 int atsitiktinaspaz(int min, int max)
 {
@@ -169,9 +196,9 @@ void file_gen(int &m, int &n)
         fr<<setw(15)<<left<<stud.vardas<<setw(16)<<left<<stud.pavarde;
         for(int i=0; i<n; i++)
         {
-            fr<<setw(5)<<atsitiktinaspaz(1, 10);
+            fr<<setw(5)<<atsitiktinaspaz(2, 10);
         }
-        fr<<setw(4)<<right<<atsitiktinaspaz(1, 10)<<endl;
+        fr<<setw(4)<<right<<atsitiktinaspaz(2, 10)<<endl;
     }
     fr.close();
 }

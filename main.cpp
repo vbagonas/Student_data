@@ -4,7 +4,7 @@ int main ()
 {
     Studentas stud;
     vector <Studentas> studentai, vargsiukai, kietiakai;
-    int m = 0, n = 0, n1, skaicius;
+    int skaicius, m = 0, n = 0;
     int sum = 0;
     string t;
 
@@ -21,7 +21,7 @@ int main ()
             duomenu_ivedimas(stud, i, n, sum, m);
             VidurkisIrMediana(stud, n, sum, studentai);
         }
-        sort(studentai.begin(), studentai.end(), vardlyg);
+        Rusiavimas2(studentai);
         cout << "------------------------------------------------------------------------" << endl;
         cout << setw(15) << left << "Vardas" << setw(15) << right << "Pavarde" << setw(20) << right << "Galutinis (Vid.)";
         cout << setw(20) << right << "Galutinis (Med.)" << endl;
@@ -48,7 +48,7 @@ int main ()
         std::chrono::duration<double> diff = end-start;
         cout << m << " studentu failo skaitymas uztruko: "<< diff.count() << " s;" << endl;
 
-        sort(studentai.begin(), studentai.end(), vardlyg);
+        Rusiavimas2(studentai);
 
         start = std::chrono::high_resolution_clock::now();
 
@@ -56,14 +56,26 @@ int main ()
 
         end = std::chrono::high_resolution_clock::now();
         std::chrono::duration<double> diff1 = end-start;
-        cout << m << " studentu failo rusiavimas uztruko: "<< diff.count() << " s;" << endl;
+        cout << m << " studentu failo rusiavimas uztruko: "<< diff1.count() << " s;" << endl;
 
         start = std::chrono::high_resolution_clock::now();
         isvedimas_i_faila(vargsiukai, "Vargsiukai");
         isvedimas_i_faila(kietiakai, "Kietiakai");
         end = std::chrono::high_resolution_clock::now();
         std::chrono::duration<double> diff2 = end-start;
-        cout << m << " studentu failu isvedimas uztruko: "<< diff.count() << " s;" << endl;
+        cout << m << " studentu failu isvedimas uztruko: "<< diff2.count() << " s;" << endl;
+
+        cout << "------------------------------------------------------------------------" << endl;
+        cout << setw(15) << left << "Vardas" << setw(15) << right << "Pavarde" << setw(20) << right << "Galutinis (Vid.)";
+        cout << setw(20) << right << "Galutinis (Med.)" << endl;
+
+        cout << "------------------------------------------------------------------------" << endl;
+        for (auto &a: studentai)
+        {
+            cout << setw(15) << left << a.vardas << setw(15) << right << a.pavarde;
+            cout << setw(20) << right << setprecision(2) << fixed << a.vidurkis*0.4 + a.egzam*0.6;
+            cout << setw(20) << right << setprecision(2) << fixed << a.mediana*0.4 + a.egzam*0.6 << endl;
+        }
     }
     else
     {
