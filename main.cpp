@@ -70,17 +70,6 @@ int main ()
         std::chrono::duration<double> diff3 = end-start;
         cout << m << " studentu failu isvedimas uztruko: "<< diff3.count() << " s;" << endl;
 
-        cout << "------------------------------------------------------------------------" << endl;
-        cout << setw(15) << left << "Vardas" << setw(15) << right << "Pavarde" << setw(20) << right << "Galutinis (Vid.)";
-        cout << setw(20) << right << "Galutinis (Med.)" << endl;
-
-        cout << "------------------------------------------------------------------------" << endl;
-        for (auto &a: studentai)
-        {
-            cout << setw(15) << left << a.vardas << setw(15) << right << a.pavarde;
-            cout << setw(20) << right << setprecision(2) << fixed << a.vidurkis*0.4 + a.egzam*0.6;
-            cout << setw(20) << right << setprecision(2) << fixed << a.mediana*0.4 + a.egzam*0.6 << endl;
-        }
     }
     else
     {
