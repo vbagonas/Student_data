@@ -41,7 +41,8 @@ using std::uniform_int_distribution;
 using std::istringstream;
 using std::to_string;
 using std::list;
-
+using std::advance;
+using std::prev;
 
 
 struct Studentas {

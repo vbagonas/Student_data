@@ -127,16 +127,15 @@ void VidurkisIrMediana(Studentas &stud, int &n, int &sum, list <Studentas> &stud
 
     stud.paz.sort();
     int dyd = stud.paz.size();
-    auto x = stud.paz.begin();
+    auto it = stud.paz.begin();
+    advance(it, dyd / 2);
     if (dyd % 2 == 0)
     {
-        auto x2 = x;
-        --x2;
-        stud.mediana = static_cast<float>(*x + *x2) / 2;
+        stud.mediana = static_cast<float>(*prev(it) + *it) / 2;
     }
     else
     {
-    stud.mediana = *x;
+        stud.mediana = *it;
     }
     stud.balasmed = static_cast<float>(stud.mediana*0.4 + stud.egzam*0.6);
     stud.balasvid = static_cast<float>(stud.vidurkis*0.4 + stud.egzam*0.6);
