@@ -1,6 +1,7 @@
 # 1_uzduotis
 
---v0.2 aprašas--
+--v0.2 aprašas--<br/>
+<br/>
 1000 studentų failo nuskaitymas užtruko: 0,0040161s;
 1000 studentų failo rušiavimas į du vektorius užtruko: 0,0010028s;
 1000 studentų vargšelių failo išvedimas užtruko: 0,0020065s;
@@ -26,7 +27,8 @@
 10000000 studentų vargšelių failo išvedimas užtruko: 19,698125s;
 10000000 studentų kietiakų failo išvedimas užtruko: 43,370325s;
 
---v0.3 aprašas--
+--v0.3 aprašas--<br/>
+<br/>
 Kompiuterio sistemos parametrai:
 CPU: AMD Ryzen 7 2700X Eight-Core Processor 3.70 GHz
 RAM: 16GB DDR4 3200Mhz
