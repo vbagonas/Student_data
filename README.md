@@ -59,4 +59,6 @@ SSD: 1024GB PCIe 4.0 NVMe M.2 SSD Read/Write 7000/6000MB/s<br/>
 10000000 studentų vargšelių failo išvedimas užtruko: 22,4707s;
 10000000 studentų kietiakų failo išvedimas užtruko: 49,6949s;
 
-![image](https://github.com/vbagonas/1_uzduotis/assets/76889117/9e38d194-d476-479c-acd3-29ea3820e5cb)
+![image](https://github.com/vbagonas/1_uzduotis/assets/76889117/9e38d194-d476-479c-acd3-29ea3820e5cb)<br/>
+
+Išvados: Matoma, jog naudojant std::list<Studentai> programos sparta ženkliai sumažėja ir testavimai užtrunka ilgiau. Tad šiuo atveju norint spartesnės programos, tektų rinktis vector konteinerius.
