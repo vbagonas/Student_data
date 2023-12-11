@@ -61,4 +61,4 @@ SSD: 1024GB PCIe 4.0 NVMe M.2 SSD Read/Write 7000/6000MB/s<br/>
 
 ![image](https://github.com/vbagonas/1_uzduotis/assets/76889117/9e38d194-d476-479c-acd3-29ea3820e5cb)<br/>
 
-Išvados: Matoma, jog naudojant std::list<Studentai> programos sparta ženkliai sumažėja ir testavimai užtrunka ilgiau. Tad šiuo atveju norint spartesnės programos, tektų rinktis vector konteinerius.
+Išvados: Matoma, jog naudojant list tipo konteinerius programos sparta ženkliai sumažėja ir testavimai užtrunka ilgiau. Tad šiuo atveju norint spartesnės programos, tektų rinktis vector konteinerius.
