@@ -29,10 +29,10 @@
 
 --v0.3 aprašas--<br/>
 <br/>
-Kompiuterio sistemos parametrai:
-CPU: AMD Ryzen 7 2700X Eight-Core Processor 3.70 GHz
-RAM: 16GB DDR4 3200Mhz
-SSD: 1024GB PCIe 4.0 NVMe M.2 SSD Read/Write 7000/6000MB/s
+Kompiuterio sistemos parametrai:<br/>
+CPU: AMD Ryzen 7 2700X Eight-Core Processor 3.70 GHz<br/>
+RAM: 16GB DDR4 3200Mhz<br/>
+SSD: 1024GB PCIe 4.0 NVMe M.2 SSD Read/Write 7000/6000MB/s<br/>
 
 1000 studentų failo nuskaitymas užtruko: 0,00901463s;
 1000 studentų failo rušiavimas į du vektorius užtruko: 0,0015018s;
