@@ -3,12 +3,15 @@
 int main ()
 {
     Studentas stud;
+
+    //Zmogus zmogus;
+
     vector <Studentas> studentai, vargsiukai, kietiakai;
     int skaicius, m = 0, n = 0;
     int sum = 0;
     string t;
 
-    cout<<"Kaip ivesite duomenis? (1-ranka, 2-is failo) Jeigu norite generuoti faila, spauskite (3)"<<endl;
+    cout<<"Kaip ivesite duomenis? (1-ranka, 2-is failo) Jeigu norite generuoti faila, spauskite (3) Arba (4) Jeigu norite naudoti Rule of three"<<endl;
 
     skaicius = ivesk_skaiciu(1, 4);
 
@@ -79,10 +82,10 @@ int main ()
     else
     {
         Studentas stud;
-        stud.setVardas("Vardenis");
-        stud.setPavarde("Pavardenis");
-        stud.setBalasVid(8);
-        stud.setBalasMed(4);
+        stud.setVardas("Vardas");
+        stud.setPavarde("Pavarde");
+        stud.setBalasVid(6);
+        stud.setBalasMed(5);
         Studentas stud_copy{stud};
         Studentas stud_prisk = stud;
         cout << "Sukurtas studentas: " << endl;
