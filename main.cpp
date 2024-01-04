@@ -10,7 +10,7 @@ int main ()
 
     cout<<"Kaip ivesite duomenis? (1-ranka, 2-is failo) Jeigu norite generuoti faila, spauskite (3)"<<endl;
 
-    skaicius = ivesk_skaiciu(1, 3);
+    skaicius = ivesk_skaiciu(1, 4);
 
     if (skaicius == 1)
     {
@@ -70,11 +70,27 @@ int main ()
         cout <<"Vargsiuku failo isvedimas uztruko: "<< diff2.count() << " s;" << endl;
 
     }
-    else
+    else if(skaicius == 3)
     {
         cout<<"kiek studentu kurse? "<<endl;
         cin>>m;
         file_gen(m, n);
+    }
+    else
+    {
+        Studentas stud;
+        stud.setVardas("Vardenis");
+        stud.setPavarde("Pavardenis");
+        stud.setBalasVid(8);
+        stud.setBalasMed(4);
+        Studentas stud_copy{stud};
+        Studentas stud_prisk = stud;
+        cout << "Sukurtas studentas: " << endl;
+        cout << stud << endl;
+        cout << "Nukopijuotas studentas: " << endl;
+        cout << stud_copy << endl;
+        cout << "Priskirtas studentas: " << endl;
+        cout << stud_prisk << endl;
     }
     return 0;
 }
