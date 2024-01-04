@@ -42,9 +42,16 @@ using std::to_string;
 using std::istream;
 using std::ostream;
 
+class Zmogus{
+protected:
+    string vardas_, pavarde_;
+public:
+    virtual void setVard(string vardas) { vardas_ = vardas; }
+    virtual void setPav(string pavarde) { pavarde_ = pavarde; }
+    virtual void abstrakti() const = 0;
+};
 
-
-class Studentas {
+class Studentas : public Zmogus{
 private:
         string vardas_;
         string pavarde_;
@@ -55,7 +62,7 @@ private:
         double balasvid_;
         double balasmed_;
 public:
-    Studentas() : egzam_(0), vidurkis_(0), mediana_(0), balasvid_(0), balasmed_(0) {}
+    Studentas() : Zmogus(), egzam_(0), vidurkis_(0), mediana_(0), balasvid_(0), balasmed_(0) {}
     ~Studentas() { paz.clear();
     };
     Studentas(const Studentas& o) {
@@ -127,6 +134,7 @@ public:
     void setBalasVid(double);
     void setBalasMed(double);
 
+    void abstrakti() const {}
 };
 
 
@@ -146,5 +154,6 @@ void isvedimas_i_faila(vector <Studentas> studentai, string pavadinimas);
 
 
 #endif // STUDENTAS_H_INCLUDED
+
 
 
