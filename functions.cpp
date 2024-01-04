@@ -275,7 +275,7 @@ void isvedimas_i_faila(vector <Studentas> studentai, string pavadinimas)
 
     for (auto &a: studentai)
     {
-        fr << setw(15) << left << a.getVardas() << setw(16) << right << a.getPavarde();
+        fr << setw(15) <<  left << a.getVardas() << setw(16) << right << a.getPavarde();
         fr << setw(20) << right << setprecision(2) << fixed << a.getBalasvid();
         fr << setw(20) << right << setprecision(2) << fixed << a.getBalasmed() << endl;
     }
