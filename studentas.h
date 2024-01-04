@@ -39,6 +39,8 @@ using std::mt19937;
 using std::uniform_int_distribution;
 using std::istringstream;
 using std::to_string;
+using std::istream;
+using std::ostream;
 
 
 
@@ -54,8 +56,57 @@ private:
         double balasmed_;
 public:
     Studentas() : egzam_(0), vidurkis_(0), mediana_(0), balasvid_(0), balasmed_(0) {}
-    ~Studentas() {}
+    ~Studentas() { paz.clear();
+    };
+    Studentas(const Studentas& o) {
+        vardas_ = o.vardas_;
+        pavarde_ = o.pavarde_;
+        egzam_ = o.egzam_;
+        paz = o.paz;
+        balasvid_ = o.balasvid_;
+        balasmed_ = o.balasmed_;
+        mediana_ = o.mediana_;
+        vidurkis_ = o.vidurkis_;
+    }
 
+    Studentas& operator=(const Studentas& o)
+    {
+        if (this != &o)
+        {
+            vardas_ = o.vardas_;
+            pavarde_ = o.pavarde_;
+            egzam_ = o.egzam_;
+            paz = o.paz;
+            balasvid_ = o.balasvid_;
+            balasmed_ = o.balasmed_;
+            mediana_ = o.mediana_;
+            vidurkis_ = o.vidurkis_;
+        }
+        return *this;
+    }
+
+    friend istream& operator>>(istream& input, Studentas& s) {
+        string vardas, pavarde;
+        int egzam, pazym;
+        input >> vardas >> pavarde;
+        for (int i = 0; i < 5; i++)
+        {
+            input >> pazym;
+            s.setPazym(pazym);
+        }
+        input >> egzam;
+        s.setVardas(vardas);
+        s.setPavarde(pavarde);
+        s.setEgzam(egzam);
+        return input;
+    }
+
+    friend ostream& operator<<(ostream& output, const Studentas& s) {
+        output << setw(10) << left << s.getVardas() << setw(16) << right << s.getPavarde();
+        output << setw(10) << right << setprecision(2) << fixed << s.getBalasvid();
+        output << setw(10) << right << setprecision(2) << fixed << s.getBalasmed();
+        return output;
+    }
     string getVardas() const {return vardas_;};
     string getPavarde() const {return pavarde_;};
     const vector<int> getPaz() const {return paz;}
@@ -95,4 +146,5 @@ void isvedimas_i_faila(vector <Studentas> studentai, string pavadinimas);
 
 
 #endif // STUDENTAS_H_INCLUDED
+
 
