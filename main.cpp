@@ -58,16 +58,16 @@ int main ()
         cout << m << " studentu failo rusiavimas uztruko: "<< diff1.count() << " s;" << endl;
 
         start = std::chrono::high_resolution_clock::now();
-        isvedimas_i_faila(vargsiukai, "Vargsiukai");
-        end = std::chrono::high_resolution_clock::now();
-        std::chrono::duration<double> diff2 = end-start;
-        cout << m << " studentu failu isvedimas uztruko: "<< diff2.count() << " s;" << endl;
-
-        start = std::chrono::high_resolution_clock::now();
         isvedimas_i_faila(kietiakai, "Kietiakai");
         end = std::chrono::high_resolution_clock::now();
         std::chrono::duration<double> diff3 = end-start;
-        cout << m << " studentu failu isvedimas uztruko: "<< diff3.count() << " s;" << endl;
+        cout <<"Kietiaku failo isvedimas uztruko: "<< diff3.count() << " s;" << endl;
+
+        start = std::chrono::high_resolution_clock::now();
+        isvedimas_i_faila(vargsiukai, "Vargsiukai");
+        end = std::chrono::high_resolution_clock::now();
+        std::chrono::duration<double> diff2 = end-start;
+        cout <<"Vargsiuku failo isvedimas uztruko: "<< diff2.count() << " s;" << endl;
 
     }
     else

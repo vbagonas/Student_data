@@ -162,31 +162,30 @@ void Skaityti(vector <Studentas> &studentai, int &m, string failas)
 }
 void VidurkisIrMediana(Studentas &stud, int &n, int &sum, vector <Studentas> &studentai) {
     double avg = static_cast<float>(sum)/n;
-    avg = stud.getVidurkis();
+    vector<int> pazymiai = stud.getPaz();
 
-    const vector<int>& grades = stud.getPaz();
-    vector<int> sortedGrades = grades;
-
-    sort(sortedGrades.begin(), sortedGrades.end());
-    double mediana = 0;
-    size_t size = sortedGrades.size();
+    sort(pazymiai.begin(), pazymiai.end());
+    double mediana;
+    size_t size = pazymiai.size();
     if (size % 2 == 0)
     {
-        mediana = (sortedGrades[size / 2 - 1] + sortedGrades[size / 2]) / 2.0;
+        mediana = (pazymiai[size / 2 - 1] + pazymiai[size / 2]) / 2.0;
     }
     else
     {
-        mediana = sortedGrades[size / 2];
+        mediana = pazymiai[size / 2];
     }
     stud.setMediana(mediana);
 
-    double balasvid = stud.getVidurkis() *0.4 + stud.getEgzam()*0.6;
+    double balasvid = avg * 0.4 + stud.getEgzam() * 0.6;
     stud.setBalasVid(balasvid);
     double balasmed = stud.getMediana() *0.4 + stud.getEgzam()*0.6;
     stud.setBalasMed(balasmed);
 
     studentai.push_back(stud);
     stud.clearPaz();
+    sum = 0;
+    n=0;
 }
 bool vardlyg(const Studentas &a, const Studentas &b) {
     return a.getVardas() < b.getVardas();
