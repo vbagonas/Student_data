@@ -49,7 +49,7 @@ int main ()
 
         auto end = std::chrono::high_resolution_clock::now();
         std::chrono::duration<double> diff = end-start;
-
+        //Rusiavimas
         Rusiavimas2(studentai);
         cout << m << " studentu failo skaitymas uztruko: "<< diff.count() << " s;" << endl;
         start = std::chrono::high_resolution_clock::now();
