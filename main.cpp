@@ -86,7 +86,7 @@ int main ()
         stud.setPavarde("Pavarde");
         stud.setBalasVid(6);
         stud.setBalasMed(5);
-        Studentas stud_copy{stud};
+        Studentas stud_copy{stud};//kopijavimo
         Studentas stud_prisk = stud;
         cout << "Sukurtas studentas: " << endl;
         cout << stud << endl;
