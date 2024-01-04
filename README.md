@@ -9,6 +9,7 @@ Su Struct:
 
 Su Struct O1 flag'u:
 |                                              | 100000    | 1000000 |
+|:---                                          | ------    | ------- |
 |Failo nuskaitymo vidutinis laikas             | 0,413s    |  2.13s  |
 |Failo rūšiavimo vidutinis laikas              | 0,0260s   |  0.25s  |
 |Kietiakų failo spausdinimo vidutinis laikas   | 0,40s     |  3.99s  |
@@ -17,6 +18,7 @@ Su Struct O1 flag'u:
 
 Su Struct O2 flag'u:
 |                                              | 100000    | 1000000 |
+|:---                                          | ------    | ------- |
 |Failo nuskaitymo vidutinis laikas             | 0,417s    |  2.14s  |
 |Failo rūšiavimo vidutinis laikas              | 0,025s    |  0.24s  |
 |Kietiakų failo spausdinimo vidutinis laikas   | 0,40s     |  3.98s  |
@@ -25,6 +27,7 @@ Su Struct O2 flag'u:
 
 Su Struct O3 flag'u:
 |                                              | 100000    | 1000000 |
+|:---                                          | ------    | ------- |
 |Failo nuskaitymo vidutinis laikas             | 0,41s     |  2.10s  |
 |Failo rūšiavimo vidutinis laikas              | 0,025s    |  0.24s  |
 |Kietiakų failo spausdinimo vidutinis laikas   | 0,39s     |  4.01s  |
@@ -42,6 +45,7 @@ Su class:
 
 Su Class O1 flag'u:
 |                                              | 100000    | 1000000 |
+|:---                                          | ------    | ------- |
 |Failo nuskaitymo vidutinis laikas             | 0,446s    |  2.32s  |
 |Failo rūšiavimo vidutinis laikas              | 0,0412s   |  0.35s  |
 |Kietiakų failo spausdinimo vidutinis laikas   | 0,41s     |  4.06s  |
@@ -50,6 +54,7 @@ Su Class O1 flag'u:
 
 Su Class O2 flag'u:
 |                                              | 100000    | 1000000 |
+|:---                                          | ------    | ------- |
 |Failo nuskaitymo vidutinis laikas             | 0,442s    |  2.33s  |
 |Failo rūšiavimo vidutinis laikas              | 0,044s    |  0.34s  |
 |Kietiakų failo spausdinimo vidutinis laikas   | 0,40s     |  4.08s  |
@@ -58,6 +63,7 @@ Su Class O2 flag'u:
 
 Su Class O3 flag'u:
 |                                              | 100000    | 1000000 |
+|:---                                          | ------    | ------- |
 |Failo nuskaitymo vidutinis laikas             | 0,454s    |  2.32s  |
 |Failo rūšiavimo vidutinis laikas              | 0,0445s   |  0.34s  |
 |Kietiakų failo spausdinimo vidutinis laikas   | 0,40s     |  4.04s  |
