@@ -56,3 +56,6 @@ Su Class O3 flag'u:
 |Kietiakų failo spausdinimo vidutinis laikas   | 0,40s     |  4.04s  |
 |Vargšelių failo spausdinimo vidutinis laikas  | 0,18s     |  1.84s  |
 |Bendras laikas                                | 1,08s     |  8.56s  |
+
+Kaip matome geriausią laiką programa parodė su Struktūra ir O3 flag'u. Taip pat matoma, kad struktūra veikia greičiau už class'e.
+Class'es atveju taip pat greičiausias laikas buvo parodytas su O3 flag'u
