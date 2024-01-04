@@ -4,7 +4,7 @@ int main ()
 {
     Studentas stud;
 
-    //Zmogus zmogus;
+    //Zmogus zmogus; //patikrinti
 
     vector <Studentas> studentai, vargsiukai, kietiakai;
     int skaicius, m = 0, n = 0;
