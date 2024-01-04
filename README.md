@@ -1,32 +1,32 @@
 Su Struct:
 |                                              | 100000    | 1000000 |
 |:---                                          | ------    | ------- |
-|Failo nuskaitymo vidutinis laikas             | 0,698s    |  3,46s  |
-|Failo rūšiavimo vidutinis laikas              | 0,0678s   |  0,52s  |
-|Kietiakų failo spausdinimo vidutinis laikas   | 0,482s    |  4,78s  |
-|Vargšelių failo spausdinimo vidutinis laikas  | 0,142s    |  1,34s  |
-|Bendras laikas                                | 1,39s     |  10,09s |
+|Failo nuskaitymo vidutinis laikas             | 0,632s    |  2.90s  |
+|Failo rūšiavimo vidutinis laikas              | 0,0468s   |  0,39s  |
+|Kietiakų failo spausdinimo vidutinis laikas   | 0,430s    |  4,23s  |
+|Vargšelių failo spausdinimo vidutinis laikas  | 0,198s    |  1,94s  |
+|Bendras laikas                                | 1,30s     |  9.47s  |
 Su Struct O1 flag'u:
 |                                              | 100000    | 1000000 |
-|Failo nuskaitymo vidutinis laikas             | 0,457s    |  2.35s  |
-|Failo rūšiavimo vidutinis laikas              | 0,0413s   |  0.31s  |
-|Kietiakų failo spausdinimo vidutinis laikas   | 0,46s     |  4.47s  |
-|Vargšelių failo spausdinimo vidutinis laikas  | 0,13s     |  1.29s  |
-|Bendras laikas                                | 1,09s     |  8.42s  |
+|Failo nuskaitymo vidutinis laikas             | 0,413s    |  2.13s  |
+|Failo rūšiavimo vidutinis laikas              | 0,0260s   |  0.25s  |
+|Kietiakų failo spausdinimo vidutinis laikas   | 0,40s     |  3.99s  |
+|Vargšelių failo spausdinimo vidutinis laikas  | 0,18s     |  1.82s  |
+|Bendras laikas                                | 1,02s     |  8.20s  |
 Su Struct O2 flag'u:
 |                                              | 100000    | 1000000 |
-|Failo nuskaitymo vidutinis laikas             | 0,445s    |  2.34s  |
-|Failo rūšiavimo vidutinis laikas              | 0,038s    |  0.30s  |
-|Kietiakų failo spausdinimo vidutinis laikas   | 0,45s     |  4.50s  |
-|Vargšelių failo spausdinimo vidutinis laikas  | 0,13s     |  1.29s  |
-|Bendras laikas                                | 1,06s     |  8.43s  |
+|Failo nuskaitymo vidutinis laikas             | 0,417s    |  2.14s  |
+|Failo rūšiavimo vidutinis laikas              | 0,025s    |  0.24s  |
+|Kietiakų failo spausdinimo vidutinis laikas   | 0,40s     |  3.98s  |
+|Vargšelių failo spausdinimo vidutinis laikas  | 0,19s     |  1.82s  |
+|Bendras laikas                                | 1,03s     |  8.20s  |
 Su Struct O3 flag'u:
 |                                              | 100000    | 1000000 |
-|Failo nuskaitymo vidutinis laikas             | 0,439s    |  2.33s  |
-|Failo rūšiavimo vidutinis laikas              | 0,0415s   |  0.30s  |
-|Kietiakų failo spausdinimo vidutinis laikas   | 0,45s     |  4.44s  |
-|Vargšelių failo spausdinimo vidutinis laikas  | 0,13s     |  1.29s  |
-|Bendras laikas                                | 1,06s     |  8.37s  |
+|Failo nuskaitymo vidutinis laikas             | 0,41s     |  2.10s  |
+|Failo rūšiavimo vidutinis laikas              | 0,025s    |  0.24s  |
+|Kietiakų failo spausdinimo vidutinis laikas   | 0,39s     |  4.01s  |
+|Vargšelių failo spausdinimo vidutinis laikas  | 0,18s     |  1.82s  |
+|Bendras laikas                                | 1,02s     |  8.19s  |
 Su class:
 |                                              | 100000    | 1000000 |
 |:---                                          | ------    | ------- |
