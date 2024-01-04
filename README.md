@@ -8,7 +8,6 @@ Su class:
 |Bendras laikas                                | 1,39s     |  10,09s |
 Su Class O1 flag'u:
 |                                              | 100000    | 1000000 |
-|:---                                          | ------    | ------- |
 |Failo nuskaitymo vidutinis laikas             | 0,457s    |  2.35s  |
 |Failo rūšiavimo vidutinis laikas              | 0,0413s   |  0.31s  |
 |Kietiakų failo spausdinimo vidutinis laikas   | 0,46s     |  4.47s  |
@@ -16,7 +15,6 @@ Su Class O1 flag'u:
 |Bendras laikas                                | 1,09s     |  8.42s  |
 Su Class O2 flag'u:
 |                                              | 100000    | 1000000 |
-|:---                                          | ------    | ------- |
 |Failo nuskaitymo vidutinis laikas             | 0,445s    |  2.34s  |
 |Failo rūšiavimo vidutinis laikas              | 0,038s    |  0.30s  |
 |Kietiakų failo spausdinimo vidutinis laikas   | 0,45s     |  4.50s  |
@@ -24,7 +22,6 @@ Su Class O2 flag'u:
 |Bendras laikas                                | 1,06s     |  8.43s  |
 Su Class O3 flag'u:
 |                                              | 100000    | 1000000 |
-|:---                                          | ------    | ------- |
 |Failo nuskaitymo vidutinis laikas             | 0,439s    |  2.33s  |
 |Failo rūšiavimo vidutinis laikas              | 0,0415s   |  0.30s  |
 |Kietiakų failo spausdinimo vidutinis laikas   | 0,45s     |  4.44s  |
