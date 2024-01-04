@@ -87,7 +87,7 @@ int main ()
         stud.setBalasVid(6);
         stud.setBalasMed(5);
         Studentas stud_copy{stud};//kopijavimo
-        Studentas stud_prisk = stud;
+        Studentas stud_prisk = stud;//priskyrimo
         cout << "Sukurtas studentas: " << endl;
         cout << stud << endl;
         cout << "Nukopijuotas studentas: " << endl;
