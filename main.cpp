@@ -44,7 +44,7 @@ int main ()
         cin>>failas;
 
         auto start = std::chrono::high_resolution_clock::now();
-
+        //Skaitymas
         Skaityti(studentai, m, failas);
 
         auto end = std::chrono::high_resolution_clock::now();
